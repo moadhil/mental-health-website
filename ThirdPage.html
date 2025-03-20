@@ -1,0 +1,63 @@
+<!-- Contact.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles/Style.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="SecondPage.html">Understanding Mental Health</a> |
+            <a href="ThirdPage.html">Contact</a> |
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+
+        <section>
+            <h2>Our Location</h2>
+            <div id="map" style="width: 100%; height: 400px; margin-top: 20px;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function initMap() {
+            var sligo = { lat: 54.2697, lng: -8.4694 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: sligo
+            });
+            new google.maps.Marker({
+                position: sligo,
+                map: map
+            });
+        }
+        window.onload = initMap;
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" async defer></script>
+</body>
+</html>
